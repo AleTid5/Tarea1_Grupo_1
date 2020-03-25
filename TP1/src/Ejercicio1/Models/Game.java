@@ -1,4 +1,4 @@
-package Ejercicio1.Game;
+package Ejercicio1.Models;
 
 import Ejercicio1.Exceptions.NearException;
 import Ejercicio1.Exceptions.RangeException;
@@ -12,7 +12,7 @@ public class Game {
     private Integer triedTimes = 0;
 
     public Game() {
-        NumberGenerator.initialize(true);
+        NumberGenerator.initialize();
         this.play();
     }
 
@@ -47,7 +47,7 @@ public class Game {
     }
 
     private void askForANumber() {
-        Message.normal("Ingrese un número: ");
+        Message.grey("Ingrese un número: ");
         this.inputNumber = new Scanner(System.in).nextInt();
     }
 

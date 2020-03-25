@@ -1,4 +1,4 @@
-package Ejercicio1.Game;
+package Ejercicio1.Models;
 
 import Utils.Messages.Message;
 
@@ -8,11 +8,16 @@ public abstract class NumberGenerator {
     private static final ValueRange range = ValueRange.of(1, 100);
     private static final Integer randomNumber = (int) (Math.random() * (range.getMaximum() - range.getMinimum()) + range.getMinimum());
 
+    public static void initialize() {
+        NumberGenerator.initialize(false);
+    }
+
     public static void initialize(Boolean showGeneratedNumber) {
         if (showGeneratedNumber) {
-            Message.normal("Se ha generado un número aleatorio, intente adivinarlo! (" + NumberGenerator.randomNumber + ")");
+            Message.blue(String.format("Se ha generado un número aleatorio, intente adivinarlo! (%s)",
+                    NumberGenerator.randomNumber));
         } else {
-            Message.normal("Se ha generado un número aleatorio, intente adivinarlo!");
+            Message.blue("Se ha generado un número aleatorio, intente adivinarlo!");
         }
     }
 
