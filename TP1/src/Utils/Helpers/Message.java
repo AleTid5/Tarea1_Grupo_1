@@ -1,4 +1,4 @@
-package Utils.Messages;
+package Utils.Helpers;
 
 public abstract class Message {
     public static final String RESET = "\u001B[0m";

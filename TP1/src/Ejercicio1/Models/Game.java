@@ -2,7 +2,7 @@ package Ejercicio1.Models;
 
 import Ejercicio1.Exceptions.NearException;
 import Ejercicio1.Exceptions.RangeException;
-import Utils.Messages.Message;
+import Utils.Helpers.Message;
 
 import java.util.InputMismatchException;
 import java.util.Scanner;

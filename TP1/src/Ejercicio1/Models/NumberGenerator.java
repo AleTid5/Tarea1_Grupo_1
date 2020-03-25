@@ -1,6 +1,6 @@
 package Ejercicio1.Models;
 
-import Utils.Messages.Message;
+import Utils.Helpers.Message;
 
 import java.time.temporal.ValueRange;
 
