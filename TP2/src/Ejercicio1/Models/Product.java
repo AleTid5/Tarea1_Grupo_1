@@ -1,5 +1,10 @@
 package Ejercicio1.Models;
 
+import Ejercicio1.Exceptions.InvalidCodeException;
+import Utils.Helpers.Message;
+
+import java.util.Scanner;
+
 public class Product implements Comparable {
     private Integer code = null;
     private String name = null;
@@ -10,28 +15,67 @@ public class Product implements Comparable {
         return code;
     }
 
-    public void setCode(Integer code) throws Exception {
-        if (code >= 1000000) throw new Exception("El codigo de artículo debe ser inferior a 100000.");
-
-        this.code = code;
-    }
-
     public String getName() {
         return name;
     }
 
-    public void setName(String name) throws Exception {
-        if (name.length() > 19) throw new Exception("El nombre puede contener hasta 19 caracteres.");
+    public Product setCode() throws InvalidCodeException {
+        try {
+            Message.grey("Ingrese código del artículo: ");
+            Integer code = new Scanner(System.in).nextInt();
 
-        this.name = name;
+            if (code.equals(0)) throw new InvalidCodeException();
+            if (code >= 1000000) throw new Exception("El codigo de artículo debe ser inferior a 1000000.");
+
+            this.code = code;
+        } catch (InvalidCodeException e) {
+            throw e;
+        } catch (Exception e) {
+            Message.error(e.getMessage() != null ? e.getMessage() : "El código ingresado es incorrecto.");
+            this.setCode();
+        }
+
+        return this;
     }
 
-    public void setSoldQuantity(Integer soldQuantity) {
-        this.soldQuantity = soldQuantity;
+    public Product setName() {
+        try {
+            Message.grey("Ingrese nombre del artículo: ");
+            String name = new Scanner(System.in).nextLine();
+
+            if (name.length() > 19) throw new Exception("El nombre puede contener hasta 19 caracteres.");
+
+            this.name = name;
+        } catch (Exception e) {
+            Message.error(e.getMessage());
+            this.setName();
+        }
+
+        return this;
     }
 
-    public void setPrice(Double price) {
-        this.price = price;
+    public Product setSoldQuantity() {
+        try {
+            Message.grey("Ingrese cantidad vendida: ");
+            this.soldQuantity = new Scanner(System.in).nextInt();
+        } catch (Exception e) {
+            Message.error("La cantidad ingresada es incorrecta.");
+            this.setSoldQuantity();
+        }
+
+        return this;
+    }
+
+    public Product setPrice() {
+        try {
+            Message.grey("Ingrese precio del artículo: ");
+            this.price = new Scanner(System.in).nextDouble();
+        } catch (Exception e) {
+            Message.error("El precio ingresado es incorrecto.");
+            this.setPrice();
+        }
+
+        return this;
     }
 
     public static String tableHeader() {

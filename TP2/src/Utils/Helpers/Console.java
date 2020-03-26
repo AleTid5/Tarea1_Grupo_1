@@ -1,20 +1,17 @@
 package Utils.Helpers;
 
+import java.util.stream.IntStream;
+
 public abstract class Console {
     public static void clear() {
-        try {
-            final String command = java.lang.System.getProperty("os.name").contains("Windows") ? "cls" : "clear all";
-
-            Runtime.getRuntime().exec(command);
-        }
-        catch (Exception e) {
-            Message.normal(e.getMessage());
-        }
+        IntStream.range(1, 5).forEach(i -> Message.normal("\f"));
     }
 
-    public static void sleep(long millis) {
-        try {
-            Thread.sleep(millis);
-        } catch (Exception ignored) {}
+    public static void successMessage() {
+        Message.normal("\f");
+        Message.success("-----------------------------------------");
+        Message.success("---- ¡PRODUCTO CARGADO EXITOSAMENTE! ----");
+        Message.success("-----------------------------------------");
+        Message.normal("\f");
     }
 }
