@@ -5,14 +5,13 @@ import Ejercicio1.Models.Product;
 import Utils.Helpers.Console;
 import Utils.Helpers.Message;
 
-import java.util.Comparator;
-import java.util.LinkedHashSet;
 import java.util.Scanner;
+import java.util.TreeSet;
 
 public class MarketService {
-    private static LinkedHashSet<Product> productList = new LinkedHashSet<>();
+    private static TreeSet<Product> productList = new TreeSet<>();
 
-    public static void start() {
+    public static void startProcess() {
         boolean loadSale = true;
 
         while (loadSale) {
@@ -47,14 +46,8 @@ public class MarketService {
         }
     }
 
-    public static void process() {
-        //productList.spliterator();
-    }
-
     public static void showTable() {
-        Message.normal("Nombre de Producto | Código | Cantidad total vendida | Precio");
-        productList.forEach((Product product) -> {
-            Message.blue(product.toString());
-        });
+        Message.primary(Product.tableHeader());
+        productList.forEach((Product product) -> Message.blue(product.toString()));
     }
 }
