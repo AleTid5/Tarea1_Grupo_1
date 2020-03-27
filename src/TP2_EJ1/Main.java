@@ -1,6 +1,6 @@
-package Ejercicio1;
+package TP2_EJ1;
 
-import Ejercicio1.Services.MarketService;
+import TP2_EJ1.Services.MarketService;
 
 public class Main {
     public static void main(String[] args) {

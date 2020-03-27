@@ -1,14 +1,10 @@
-package Utils.Helpers;
+package Common.Utils;
 
-public abstract class Message {
-    public static final String RESET = "\u001B[0m";
-    public static final String RED = "\u001B[31m";
-    public static final String GREEN = "\u001B[32m";
-    public static final String YELLOW = "\u001B[33m";
-    public static final String BLUE = "\u001B[34m";
-    public static final String PURPLE = "\u001B[35m";
-    public static final String CYAN = "\u001B[36m";
-    public static final String WHITE = "\u001B[37m";
+import Common.Utils.Interfaces.IMessage;
+
+public abstract class Message implements IMessage {
+    
+    private static Boolean flag = false;
 
     public static void blue(Object message) {
         System.out.println(BLUE + message + RESET);
@@ -40,5 +36,19 @@ public abstract class Message {
 
     public static void warning(Object message) {
         System.out.println(YELLOW + message + RESET);
+    }
+
+    public static void primaryGrey(Object message) {
+        if (flag = !flag)
+            Message.primary(message);
+        else
+            Message.grey(message);
+    }
+
+    public static void greyBlue(Object message) {
+        if (flag = !flag)
+            Message.grey(message);
+        else
+            Message.blue(message);
     }
 }

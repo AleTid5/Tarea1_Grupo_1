@@ -1,4 +1,4 @@
-package Utils.Helpers;
+package Common.Utils;
 
 import java.util.stream.IntStream;
 

@@ -1,7 +1,7 @@
-package Ejercicio1.Models;
+package TP2_EJ1.Models;
 
-import Ejercicio1.Exceptions.InvalidCodeException;
-import Utils.Helpers.Message;
+import Common.Utils.Message;
+import TP2_EJ1.Exceptions.InvalidCodeException;
 
 import java.util.Scanner;
 
@@ -43,7 +43,8 @@ public class Product implements Comparable {
             Message.grey("Ingrese nombre del artículo: ");
             String name = new Scanner(System.in).nextLine();
 
-            if (name.length() > 19) throw new Exception("El nombre puede contener hasta 19 caracteres.");
+            if (name.length() > 19 || name.length() < 3)
+                throw new Exception("El nombre debe contener entre 3 y 19 caracteres.");
 
             this.name = name;
         } catch (Exception e) {

@@ -1,9 +1,9 @@
-package Ejercicio1.Services;
+package TP2_EJ1.Services;
 
-import Ejercicio1.Exceptions.InvalidCodeException;
-import Ejercicio1.Models.Product;
-import Utils.Helpers.Console;
-import Utils.Helpers.Message;
+import Common.Utils.Console;
+import Common.Utils.Message;
+import TP2_EJ1.Exceptions.InvalidCodeException;
+import TP2_EJ1.Models.Product;
 
 import java.util.TreeSet;
 
@@ -28,7 +28,7 @@ public class MarketService {
 
     public static void showTable() {
         Console.clear();
-        Message.primary(Product.tableHeader());
-        productList.forEach((Product product) -> Message.blue(product.toString()));
+        Message.warning(Product.tableHeader());
+        productList.forEach((Product product) -> Message.greyBlue(product.toString()));
     }
 }
