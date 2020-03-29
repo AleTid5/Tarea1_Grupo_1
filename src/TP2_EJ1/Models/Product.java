@@ -21,7 +21,7 @@ public class Product implements Comparable {
 
     public Product setCode() throws InvalidCodeException {
         try {
-            Message.grey("Ingrese código del artículo: ");
+            Message.show("Ingrese código del artículo: ");
             Integer code = new Scanner(System.in).nextInt();
 
             if (code.equals(0)) throw new InvalidCodeException();
@@ -31,7 +31,7 @@ public class Product implements Comparable {
         } catch (InvalidCodeException e) {
             throw e;
         } catch (Exception e) {
-            Message.error(e.getMessage() != null ? e.getMessage() : "El código ingresado es incorrecto.");
+            Message.show(e.getMessage() != null ? e.getMessage() : "El código ingresado es incorrecto.");
             this.setCode();
         }
 
@@ -40,7 +40,7 @@ public class Product implements Comparable {
 
     public Product setName() {
         try {
-            Message.grey("Ingrese nombre del artículo: ");
+            Message.show("Ingrese nombre del artículo: ");
             String name = new Scanner(System.in).nextLine();
 
             if (name.length() > 19 || name.length() < 3)
@@ -48,7 +48,7 @@ public class Product implements Comparable {
 
             this.name = name;
         } catch (Exception e) {
-            Message.error(e.getMessage());
+            Message.show(e.getMessage());
             this.setName();
         }
 
@@ -57,10 +57,10 @@ public class Product implements Comparable {
 
     public Product setSoldQuantity() {
         try {
-            Message.grey("Ingrese cantidad vendida: ");
+            Message.show("Ingrese cantidad vendida: ");
             this.soldQuantity = new Scanner(System.in).nextInt();
         } catch (Exception e) {
-            Message.error("La cantidad ingresada es incorrecta.");
+            Message.show("La cantidad ingresada es incorrecta.");
             this.setSoldQuantity();
         }
 
@@ -69,10 +69,10 @@ public class Product implements Comparable {
 
     public Product setPrice() {
         try {
-            Message.grey("Ingrese precio del artículo: ");
+            Message.show("Ingrese precio del artículo: ");
             this.price = new Scanner(System.in).nextDouble();
         } catch (Exception e) {
-            Message.error("El precio ingresado es incorrecto.");
+            Message.show("El precio ingresado es incorrecto.");
             this.setPrice();
         }
 

@@ -28,7 +28,7 @@ public class MarketService {
 
     public static void showTable() {
         Console.clear();
-        Message.warning(Product.tableHeader());
-        productList.forEach((Product product) -> Message.greyBlue(product.toString()));
+        Message.show(Product.tableHeader());
+        productList.forEach((Product product) -> Message.show(product.toString()));
     }
 }

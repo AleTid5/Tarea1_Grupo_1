@@ -4,14 +4,14 @@ import java.util.stream.IntStream;
 
 public abstract class Console {
     public static void clear() {
-        IntStream.range(1, 5).forEach(i -> Message.normal("\f"));
+        IntStream.range(1, 5).forEach(i -> Message.show("\f"));
     }
 
     public static void successMessage() {
-        Message.normal("\f");
-        Message.success("-----------------------------------------");
-        Message.success("---- ¡PRODUCTO CARGADO EXITOSAMENTE! ----");
-        Message.success("-----------------------------------------");
-        Message.normal("\f");
+        Message.show("\f");
+        Message.show("-----------------------------------------");
+        Message.show("---- ¡PRODUCTO CARGADO EXITOSAMENTE! ----");
+        Message.show("-----------------------------------------");
+        Message.show("\f");
     }
 }
