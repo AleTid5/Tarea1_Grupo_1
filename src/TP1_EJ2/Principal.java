@@ -16,6 +16,7 @@ public class Principal {
 		for (Empleado empleado : vEmpleado) {
 			Message.show(empleado.DevuelveDatos());
 		}
-		System.out.println("El proximo ID sera el " + Empleado.DevuelveProximoId());
+		
+		Message.show(String.format("El proximo ID sera el %s", Empleado.DevuelveProximoId()));
 	}
 }
