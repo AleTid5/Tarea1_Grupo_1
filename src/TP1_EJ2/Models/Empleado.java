@@ -49,12 +49,10 @@ public class Empleado {
 	
 	//Metodos
 	public String DevuelveDatos() {
-		String empleado = String.format("Empleado: ID = %d, Nombre = %s, Edad = %s",id,nombre,edad);
-		return empleado;
+		return String.format("Empleado: ID = %d, Nombre = %s, Edad = %s",id,nombre,edad);;
 	}
 	
-	public static int DevuelveProximoId()
-	{
+	public static int DevuelveProximoId() {
 		return contador++ ;
 	}
 	
