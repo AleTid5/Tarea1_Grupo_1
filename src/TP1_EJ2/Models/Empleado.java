@@ -49,7 +49,8 @@ public class Empleado {
 	
 	//Metodos
 	public String DevuelveDatos() {
-		return "Empleado: ID =" + id + ", Nombre =" + nombre + ", Edad =" + edad ;
+		String empleado = String.format("Empleado: ID = %d, Nombre = %s, Edad = %s",id,nombre,edad);
+		return empleado;
 	}
 	
 	public static int DevuelveProximoId()

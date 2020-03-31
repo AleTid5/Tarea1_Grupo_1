@@ -1,5 +1,6 @@
 package TP1_EJ2;
 
+import Common.Utils.Message;
 import TP1_EJ2.Models.Empleado;
 
 public class Principal {
@@ -13,9 +14,8 @@ public class Principal {
 		vEmpleado[3] = new Empleado("Enrique",22);
 		
 		for (Empleado empleado : vEmpleado) {
-			System.out.println(empleado.DevuelveDatos());
+			Message.show(empleado.DevuelveDatos());
 		}
-		
 		System.out.println("El proximo ID sera el " + Empleado.DevuelveProximoId());
 	}
 }
