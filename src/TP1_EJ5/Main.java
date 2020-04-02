@@ -9,9 +9,7 @@ import TP1_EJ5.Models.Oficina;
 import TP1_EJ5.Models.Polideportivo;
 
 public class Main {
-
 	public static void main(String[] args) {
-		
 		ArrayList<Edificio> edificios = new ArrayList<>();
 		edificios.add(new Polideportivo("Torcuato", 1250.5, 1));
 		edificios.add(new Polideportivo("Ricardo Rojas", 8512.1, 2));
@@ -23,7 +21,5 @@ public class Main {
 		while (iteradorDeEdificios.hasNext()) {
 			Message.show(iteradorDeEdificios.next().mostrarAtributos());
 		}
-		
 	}
-
 }

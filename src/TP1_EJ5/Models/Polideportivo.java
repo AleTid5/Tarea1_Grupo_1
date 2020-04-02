@@ -4,24 +4,21 @@ import TP1_EJ5.Interfaces.Edificio;
 import TP1_EJ5.Interfaces.InstalacionDeportiva;
 
 public class Polideportivo implements Edificio, InstalacionDeportiva {
-	
 	private String nombre;
 	private double superficie;
-	private int tipoDeInstalacion;
+	private Integer tipoDeInstalacion;
 	
-	public Polideportivo(String nombre, double superficie, int tipoDeInstalacion) {
-		super();
-		this.nombre = nombre;
-		this.superficie = superficie;
-		this.tipoDeInstalacion = tipoDeInstalacion;
+	public Polideportivo(String nombre, double superficie, Integer tipoDeInstalacion) {
+		this.setNombre(nombre);
+		this.setSuperficieEdificio(superficie);
+		this.setTipoDeInstalacion(tipoDeInstalacion);
 	}
 
 	@Override
-	public int getTipoDeInstalacion() {
+	public Integer getTipoDeInstalacion() {
 		return this.tipoDeInstalacion;
 	}
-	
-	public void setTipoDeInstalacion(int tipoDeInstalacion) {
+	public void setTipoDeInstalacion(Integer tipoDeInstalacion) {
 		this.tipoDeInstalacion = tipoDeInstalacion;
 	}
 
@@ -29,7 +26,6 @@ public class Polideportivo implements Edificio, InstalacionDeportiva {
 	public double getSuperficieEdificio() {
 		return this.superficie;
 	}
-	
 	public void setSuperficieEdificio(double superficie) {
 		this.superficie = superficie;
 	}
@@ -37,7 +33,6 @@ public class Polideportivo implements Edificio, InstalacionDeportiva {
 	public String getNombre() {
 		return nombre;
 	}
-
 	public void setNombre(String nombre) {
 		this.nombre = nombre;
 	}

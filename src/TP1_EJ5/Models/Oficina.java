@@ -3,30 +3,26 @@ package TP1_EJ5.Models;
 import TP1_EJ5.Interfaces.Edificio;
 
 public class Oficina implements Edificio {
-
-	private int numeroDeOficinas;
-	private double superficie;
+	private Integer numeroDeOficinas;
+	private double superficieEdificio;
 	
-	public Oficina(int numeroDeOficinas, double superficie) {
-		super();
-		this.numeroDeOficinas = numeroDeOficinas;
-		this.superficie = superficie;
+	public Oficina(Integer numeroDeOficinas, double superficieEdificio) {
+		this.setNumeroDeOficinas(numeroDeOficinas);
+		this.setSuperficieEdificio(superficieEdificio);
 	}
 	
 	@Override
 	public double getSuperficieEdificio() {
-		return this.superficie;
+		return this.superficieEdificio;
 	}
-	
-	public void setSuperficieEdificio(double superficie) {
-		this.superficie = superficie;
+	public void setSuperficieEdificio(double superficieEdificio) {
+		this.superficieEdificio = superficieEdificio;
 	}
 
-	public int getNumeroDeOficinas() {
+	public Integer getNumeroDeOficinas() {
 		return numeroDeOficinas;
 	}
-
-	public void setNumeroDeOficinas(int numeroDeOficinas) {
+	public void setNumeroDeOficinas(Integer numeroDeOficinas) {
 		this.numeroDeOficinas = numeroDeOficinas;
 	}
 
